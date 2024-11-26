@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Coefficient de Traînée</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../exercice_2/css/styles.css">
+    <script src="../exercice_2/js/app.js" type="module"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
 
+<body>
+<div class="container mt-4">
+    <div class="border p-3 mb-3 text-center">
+        <h1>Calculateur de Coefficient de Traînée (CD)</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="border p-3">
+                <h5>Définition des Forces</h5>
+                <ul id="forces-list"></ul>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <form id="cd-form">
+                <div class="mb-3">
+                    <label for="flap" class="form-label">Position des volets :</label>
+                    <select id="flap" class="form-select">
+                        <option value="" disabled selected>Sélectionner une valeur de flap</option>
+                        <option value="0">0</option>
+                        <option value="20">20</option>
+                        <option value="45">45</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="mach" class="form-label">Nombre de Mach :</label>
+                    <input type="text" id="mach" class="form-control" placeholder="Entrez un nombre entre 0 et 0.85">
+                </div>
+                <div class="mb-3">
+                    <label for="cl" class="form-label">Coefficient de Portance :</label>
+                    <input type="text" id="cl" class="form-control" placeholder="Entrez un nombre entre 0.2 et 1.2">
+                </div>
+                <div class="d-grid">
+                    <button type="button" class="btn btn-primary" id="calculer-btn">CALCULER</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="border p-3 mt-3">
+        <h5>Résultat :</h5>
+        <p id="resultat"></p>
+    </div>
+</div>
 </body>
 </html>
